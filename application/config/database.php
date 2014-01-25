@@ -38,24 +38,25 @@
 | the active record class
 */
 
-$active_group = 'default';
+$active_group = 'cloud';
 $active_record = TRUE;
 
-$db['default']['hostname'] = '';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = '';
-$db['default']['dbdriver'] = 'mysql';
-$db['default']['dbprefix'] = '';
-$db['default']['pconnect'] = TRUE;
-$db['default']['db_debug'] = TRUE;
-$db['default']['cache_on'] = FALSE;
-$db['default']['cachedir'] = '';
-$db['default']['char_set'] = 'utf8';
-$db['default']['dbcollat'] = 'utf8_general_ci';
-$db['default']['swap_pre'] = '';
-$db['default']['autoinit'] = TRUE;
-$db['default']['stricton'] = FALSE;
+$db['cloud']['hostname'] = '149.47.143.251';
+$db['cloud']['username'] = 'votainfo_saludf';
+$db['cloud']['password'] = '($4LuDf1337)';
+$db['cloud']['database'] = 'votainfo_saludf';
+$db['cloud']['dbdriver'] = 'mysql';
+$db['cloud']['port'] 	 = 3306;
+$db['cloud']['dbprefix'] = '';
+$db['cloud']['pconnect'] = TRUE;
+$db['cloud']['db_debug'] = TRUE;
+$db['cloud']['cache_on'] = FALSE;
+$db['cloud']['cachedir'] = '';
+$db['cloud']['char_set'] = 'utf8';
+$db['cloud']['dbcollat'] = 'utf8_general_ci';
+$db['cloud']['swap_pre'] = '';
+$db['cloud']['autoinit'] = TRUE;
+$db['cloud']['stricton'] = FALSE;
 
 
 /* End of file database.php */
