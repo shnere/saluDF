@@ -62,7 +62,31 @@
 
 		<!-- Peso -->
 		<div id="peso">
-			<div id="doughnutChart" class="chart"></div>
+			<div class="filtros">
+				<h2>Edad</h2>
+				<input type="range" id="edad" name="edad" min="1" max="99" step="1">
+				<output for="edad"></output>
+				
+				<h2>Género</h2>
+				<div class="generos">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>boton_mujer.png" class="boton active femenino" alt="Femenino">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>boton_hombre.png" class="boton active masculino" alt="Masculino">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>boton_ambosgeneros.png" class="boton active ambos" alt="Ambos Géneros">
+				</div>
+			</div>
+			
+			<div id="container-peso">
+				<div id="doughnutChart" class="chart">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>bascula.png" class="" alt="Peso" module="peso">
+				</div>
+			</div>
+			
+			<div class="resultado">
+				<img src="<?php echo base_url().FOLDER_IMG; ?>peso_normal.png" class="" alt="Normal">
+				<h3 class="font-normal">Peso Normal</h3>
+				<p>&nbsp;</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
 			
 		</div>
 		

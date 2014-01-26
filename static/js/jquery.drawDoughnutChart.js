@@ -20,12 +20,12 @@
       PI = Math.PI,
       settings = $.extend({
         segmentShowStroke : true,
-        segmentStrokeColor : "#0C1013",
+        segmentStrokeColor : "#FFFFFF",
         segmentStrokeWidth : 1,
-        baseColor: "rgba(0,0,0,0.5)",
+        baseColor: "rgba(255,255,255,0.5)",
         baseOffset: 4,
         edgeOffset : 10,//offset from edge of $this
-        percentageInnerCutout : 75,
+        percentageInnerCutout : 65,
         animation : true,
         animationSteps : 90,
         animationEasing : "easeInOutExpo",
@@ -39,8 +39,8 @@
         summaryNumberClass: "doughnutSummaryNumber",
         beforeDraw: function() {  },
         afterDrawed : function() {  },
-        onPathEnter : function(e,data) {  },
-        onPathLeave : function(e,data) {  }
+        onPathEnter : function(e,data) { console.log($(this).data().order); },
+        onPathLeave : function(e,data) { }
       }, options),
       animationOptions = {
         linear : function (t) {

@@ -35,11 +35,10 @@ $(document).ready(function(){
 	});
 	
 	  $("#doughnutChart").drawDoughnutChart([
-	    { title: "Tokyo",         value : 120,  color: "#2C3E50" },
-	    { title: "San Francisco", value:  80,   color: "#FC4349" },
-	    { title: "New York",      value:  70,   color: "#6DBCDB" },
-	    { title: "London",        value : 50,   color: "#F7E248" },
-	    { title: "Sydney",        value : 40,   color: "#D7DADB" },
-	    { title: "Berlin",        value : 20,   color: "#FFF" }
+	    { title: "Bajo Peso",         value : 120,  color: "#92278F" },
+	    { title: "Normal", value:  80,   color: "#8DC63F" },
+	    { title: "Sobrepeso",      value:  70,   color: "#FFDE17" },
+	    { title: "Obesidad",        value : 50,   color: "#F68B1F" },
+	    { title: "Obesidad Morbida",        value : 40,   color: "#BE1E2D" }
 	  ]);
 });
