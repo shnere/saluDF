@@ -200,7 +200,7 @@ main {
 
 
 /* Delegaciones */
-#container-mapa {
+#container-mapa{
 	width: 500px;
 	height: 500px;
 	margin: 0 auto;
@@ -462,4 +462,46 @@ output:after {
   width: 100%;
   margin-top: -15%;
   font-size: 55px;
+}
+
+/* FUN FACTS */
+#funfacts{
+	overflow:hidden;
+}
+.fun-container{
+	float:left;
+	overflow:hidden;
+	width: 94%;
+	margin-left: 3%;
+	margin-right:3%;
+	margin-bottom:30px;
+}
+
+.fun-container.top{
+	margin-top:50px;
+}
+
+.fun-container.left{
+	text-align:left;
+}
+
+.fun-container.right{
+	text-align:right;
+}
+
+.font-fun-fact{
+	font-size: 32px;
+}
+
+.font-fun-fact-hyper{
+	font-weight:bold;
+	font-size: 200px;
+}
+
+.fun-container img.left{
+	margin-left: 60px;
+}
+
+.fun-container img.right{
+	margin-right: 60px;
 }
