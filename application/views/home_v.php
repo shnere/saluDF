@@ -27,6 +27,8 @@
 				</div>
 				
 				<button id="filtro_delegaciones" class="filtro aqua">Filtrar</button>
+				<br>
+				<img style="margin-top:200px;" src="<?php echo base_url().FOLDER_IMG; ?>mapa_informacion.png" alt="Delegaciones">
 			</div>
 			
 			<div id="container-mapa">
