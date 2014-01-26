@@ -34,7 +34,7 @@ $(document).ready(function(){
 		actualizaGrafica(edad, genero);
 	});
 	
-	$('.generos img').click(function(){
+	$('#peso .generos img').click(function(){
 		$('#peso .generos img').each(function(){
 			$(this).removeClass('active');
 		});

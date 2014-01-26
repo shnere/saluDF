@@ -16,43 +16,38 @@
 	<div id="content">
 		<div id="delegaciones">
 			<div class="filtros">
-				<h2>Edad</h2>
-				<input type="range" id="edad_delegaciones" name="edad_delegaciones" min="1" max="99" step="1">
-				<output for="edad_delegaciones"></output>
 				
 				<h2>Género</h2>
 				<div class="generos">
-					<img src="<?php echo base_url().FOLDER_IMG; ?>boton_mujer.png" class="boton active femenino" alt="Femenino">
-					<img src="<?php echo base_url().FOLDER_IMG; ?>boton_hombre.png" class="boton active masculino" alt="Masculino">
-					<img src="<?php echo base_url().FOLDER_IMG; ?>boton_ambosgeneros.png" class="boton active ambos" alt="Ambos Géneros">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>boton_mujer.png" class="boton femenino" data-query="2" alt="Femenino">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>boton_hombre.png" class="boton masculino" data-query="3" alt="Masculino">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>boton_ambosgeneros.png" class="boton active ambos" data-query="0" alt="Ambos Géneros">
 				</div>
+				
+				<button id="filtro_delegaciones" class="filtro aqua">Filtrar</button>
 			</div>
 			
 			<div id="container-mapa">
 				<img class="delegacion-mapa" src="<?php echo base_url().FOLDER_IMG; ?>mapa_delegaciones.png">
-				<div class="puntito gustavo-madero"></div>
-				<div class="puntito azcapotzalco"></div>
-				<div class="puntito miguel-hidalgo"></div>
-				<div class="puntito cuauhtemoc"></div>
-				<div class="puntito venustiano-carranza"></div>
-				<div class="puntito alvaro-obregon"></div>
-				<div class="puntito benito-juarez"></div>
-				<div class="puntito iztacalco"></div>
-				<div class="puntito cuajimalpa"></div>
-				<div class="puntito iztapalapa"></div>
-				<div class="puntito magdalena"></div>
-				<div class="puntito coyacan"></div>
-				<div class="puntito tlahuac"></div>
-				<div class="puntito xochimilco"></div>
-				<div class="puntito milpa-alta"></div>
-				<div class="puntito tlalpan"></div>
+				<div class="puntito gustavo-madero" alt="7"></div>
+				<div class="puntito azcapotzalco" alt="2"></div>
+				<div class="puntito miguel-hidalgo" alt="11"></div>
+				<div class="puntito cuauhtemoc" alt="6"></div>
+				<div class="puntito venustiano-carranza" alt="15"></div>
+				<div class="puntito alvaro-obregon" alt="1"></div>
+				<div class="puntito benito-juarez" alt="3"></div>
+				<div class="puntito iztacalco" alt="8"></div>
+				<div class="puntito cuajimalpa" alt="5"></div>
+				<div class="puntito iztapalapa" alt="9"></div>
+				<div class="puntito magdalena" alt="10"></div>
+				<div class="puntito coyacan" alt="4"></div>
+				<div class="puntito tlahuac" alt="13"></div>
+				<div class="puntito xochimilco" alt="17"></div>
+				<div class="puntito milpa-alta" alt="16"></div>
+				<div class="puntito tlalpan" alt="14"></div>
 			</div>
 			
 			<div class="resultado">
-				<h2>Tlahuac</h2>
-				<h3 class="font-obesidad-morbida">Obesidad Morbida</h3>
-				<p>&nbsp;</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
 		</div>
 

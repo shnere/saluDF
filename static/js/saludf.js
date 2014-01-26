@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	var stickyHeaderTop = $('#header-wrap').offset().top,
 		sections = ["delegaciones", "mortalidad", "peso", "enfermedades", "funfacts"],
-		delecgaciones = [];
+		delegaciones = [];
 	
 	var showSection = function(section){
 		for(var i = 0; i < sections.length; i++){

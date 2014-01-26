@@ -200,6 +200,14 @@ main {
 
 
 /* Delegaciones */
+#delegaciones .resultado h2 {
+	margin-bottom: 15px;
+}
+
+#delegaciones .resultado h3 {
+	margin-top: 5px;
+}
+
 #container-mapa{
 	width: 500px;
 	height: 500px;
@@ -217,7 +225,7 @@ main {
 .puntito {
 	position: relative;
 	border-radius: 50%;
-	background: red;
+	background: #808285;
 	width: 20px;
 	height: 20px;
 }

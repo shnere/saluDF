@@ -4,6 +4,7 @@
 <script src="<?php echo base_url().FOLDER_JS; ?>jquery.drawDoughnutChart.js"></script>
 <script src="<?php echo base_url().FOLDER_JS; ?>saludf.js"></script>
 <script src="<?php echo base_url().FOLDER_JS; ?>slider.js"></script>
+<script src="<?php echo base_url().FOLDER_JS; ?>delegaciones.js"></script>
 <script src="<?php echo base_url().FOLDER_JS; ?>peso.js"></script>
 
 </body>
