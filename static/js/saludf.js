@@ -34,11 +34,5 @@ $(document).ready(function(){
 		showSection($(this).attr('module'));
 	});
 	
-	  $("#doughnutChart").drawDoughnutChart([
-	    { title: "Bajo Peso",         value : 120,  color: "#92278F" },
-	    { title: "Normal", value:  80,   color: "#8DC63F" },
-	    { title: "Sobrepeso",      value:  70,   color: "#FFDE17" },
-	    { title: "Obesidad",        value : 50,   color: "#F68B1F" },
-	    { title: "Obesidad Morbida",        value : 40,   color: "#BE1E2D" }
-	  ]);
+	
 });

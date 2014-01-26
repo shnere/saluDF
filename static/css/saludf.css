@@ -33,6 +33,63 @@ img.boton:not(:hover) {
 	opacity: .5;
 }
 
+.filtro {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    min-height: 1em;
+    outline: 0;
+    border: 0;
+    background-color: #fafafa;
+    color: rgba(0,0,0,.6);
+    margin: 1.25em .25em 0 0;
+    padding: .8em 1.5em;
+    font-family: Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    text-shadow: none;
+    font-weight: 700;
+    line-height: 1;
+    font-style: normal;
+    text-align: center;
+    text-decoration: none;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0)),to(rgba(0,0,0,.05)));
+    background-image: -webkit-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.05));
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.05));
+    border-radius: .25em;
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.08) inset,0 0 0 0 rgba(0,0,0,.1) inset;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.08) inset,0 0 0 0 rgba(0,0,0,.1) inset;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: opacity .25s ease,background-color .25s ease,color .25s ease,background .25s ease,-webkit-box-shadow .25s ease;
+    transition: opacity .25s ease,background-color .25s ease,color .25s ease,background .25s ease,box-shadow .25s ease
+}
+
+.filtro:hover {
+    background-color: '';
+    background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0)),to(rgba(0,0,0,.08)));
+    background-image: -webkit-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.08));
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.08));
+    color: rgba(0,0,0,.8)
+}
+
+.filtro:hover {
+    opacity: .85
+}
+
+	.aqua {
+		background-color: #7AC8C8;
+		color: #FFF;
+		text-shadow: none;
+		background-image: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+
 /* Filtros */
 
 .filtros {
@@ -168,27 +225,27 @@ main {
 	cursor: pointer;
 }
 
-.bajo-peso {
+.bg-bajo-peso {
 	background: #92278F;
 }
 
-.normal {
+.bg-normal {
 	background: #8DC63F;
 }
 
-.sobrepeso {
+.bg-sobrepeso {
 	background: #FFDE17;
 }
 
-.obesidad {
+.bg-obesidad {
 	background: #F68B1F ;
 }
 
-.obesidad-morbida {
+.bg-obesidad-morbida {
 	background: #BE1E2D ;
 }
 /* Fonts */
-.bajo-peso {
+.font-bajo-peso {
 	color: #92278F;
 }
 
@@ -309,6 +366,10 @@ main {
 	margin-left: 60px;
 	margin-top: -30px;
 }
+
+#peso .resultado h3 {
+	font-weight: bold;
+}
 	
 /* Slider */
 output { 
@@ -402,4 +463,3 @@ output:after {
   margin-top: -15%;
   font-size: 55px;
 }
-/*.chart path:hover { opacity: .65; }*/

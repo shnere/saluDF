@@ -39,7 +39,21 @@
         summaryNumberClass: "doughnutSummaryNumber",
         beforeDraw: function() {  },
         afterDrawed : function() {  },
-        onPathEnter : function(e,data) { console.log($(this).data().order); },
+        onPathEnter : function(e,data) { 
+				var order = $(this).data().order, 
+				showClass = function(val){ 
+					var keys = ["bajo-peso", "normal", "sobrepeso", "obesidad", "obesidad-morbida"];
+					for(var i = 0; i < keys.length; i++){
+						if(keys[i] === val){
+							$('.' + val).removeClass('hidden');
+						}else{
+							$('.'+keys[i]).addClass('hidden');
+						}
+					} 
+				};
+				showClass(data[order].key);
+				//$('.'+data[order].key).removeClass('hidden');
+					},
         onPathLeave : function(e,data) { }
       }, options),
       animationOptions = {
