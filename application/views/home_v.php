@@ -46,7 +46,6 @@
 				<div class="puntito xochimilco"></div>
 				<div class="puntito milpa-alta"></div>
 				<div class="puntito tlalpan"></div>
-
 			</div>
 			
 			<div class="resultado">
@@ -92,7 +91,38 @@
 		
 		<!-- Enfermedades -->
 		<div id="enfermedades">Enfermedades</div>
+		
 		<!-- Datos Curiosos -->
-		<div id="funfacts">Datos Curiosos</div>
+		<div id="funfacts">
+			<div class="fun-container left top">
+				<span class="font-fun-fact">Afecciones con <strong>mayor</strong> estancia dentro de un centro de salud.</span>
+				<br><br>
+				<img class="left" src="<?php echo base_url().FOLDER_IMG; ?>fun-facts-dias-en-cama.png" alt="Promedio días en cama por enfermedad">
+			</div>
+			<div class="fun-container right">
+				<span class="font-fun-fact">Tlalpan es la delegación con <strong>mayor</strong> número de incidencias</span>
+				<br><br>
+				<img class="right" src="<?php echo base_url().FOLDER_IMG; ?>fun-facts-delegacion-incidencias.png" alt="Delegación con mayor numero de incidencias">	
+			</div>
+			<div class="fun-container left">
+				<span class="font-fun-fact">En promedio mueren</span>
+				<br>
+				<img class="left" src="<?php echo base_url().FOLDER_IMG; ?>fun-facts-promedio-muertes.png" alt="Promedio de muertes en DF">	
+				<br>
+				<span class="font-fun-fact">personas al día en los <br> centros de salud del DF.</span>
+			</div>
+			<div class="fun-container right">
+				<span class="font-fun-fact">Obtén toda esta información en tiempo <strong>real</strong></span>
+				<br><br>
+				<p>
+					Si quieres tener acceso a información más <strong>detallada</strong> sobre <br>
+					los datos presentados en esta plataforma puedes acceder a:
+					<br><br>
+					<a href="<?php echo base_url(); ?>api/" target="_blank"><?php echo base_url(); ?>api/</a>
+					<br><br>
+					Ahí podrás consultar toda la información de esta plataforma en tiempo real y con diferentes opciones de filtrado.
+				</p>
+			</div>
+		</div>
 	</div>
 </div>
