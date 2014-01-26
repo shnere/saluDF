@@ -11,8 +11,10 @@ class Api extends MY_Controller {
 	function index() {
 		$response = array();
 		$response['get-requests'] = array(
-			'api/delegacionimc/' 			=> 'Indice de masa corporal por delegación',
-			'api/delegacionimc/parametros'	=> 'Valor de los parámetros de búsqueda via get'
+			'api/delegacionimc/' 			=> 'Incidencias de IMC por delegación contra genero',
+			'api/delegacionimc/parametros'	=> 'Valor de los parámetros de búsqueda via get',
+			'api/pesoimc/'					=> 'Incidencias acorde al de IMC contra edad y genero',
+			'api/pesoimc/parametros'		=> 'Valor de los parámetros de búsqueda via get'
 		);
 		$this->output
 			->set_content_type('application/json')
@@ -31,6 +33,7 @@ class Api extends MY_Controller {
 		switch($request){
 			case 'parametros':
 					$response['get-requests'] = array();
+					$response['extras'] = array();
 					$queryGenero	= $this->dimensiones_model->getDimension('genero');
 					if($queryGenero->num_rows()){
 						$response['get-requests']['genero'] = array();
@@ -42,16 +45,30 @@ class Api extends MY_Controller {
 							);
 						}
 					}
+					$queryDelegacion= $this->dimensiones_model->getDimension('delegacion');
+					if($queryDelegacion->num_rows()){
+						$response['extras']['delegacion'] = array();
+						$response['extras']['delegacion']['nombre'] = "Delegacion";
+						$response['extras']['delegacion']['parametros'] = array();
+						foreach($queryDelegacion->result() as $rowDel){
+							$response['extras']['delegacion']['parametros'][] = array(
+								$rowDel->idDelegacion 	=> $rowDel->delegacion,
+							);
+						}
+					}
 				break;
 			default:
-					$response['genero'] 	= (isset($_GET['genero']))?$_GET['genero']:"";
+					$idGenero = (isset($_GET['genero']))?$_GET['genero']:"";
 					$this->load->model("peso_model");
-					$queryDelImc	= $this->peso_model->getDelegacionImc($response['genero']);
+					$response['status'] 	= "OK";
+					$queryDelImc	= $this->peso_model->getDelegacionImc($idGenero);
 					if($queryDelImc->num_rows()){
+						$response['genero'] 	= $idGenero;
 						$response['rows'] = array();
 						foreach($queryDelImc->result() as $rowDelImc){
 							$response['rows'][] = array(
 								"idDelegacion"			=> $rowDelImc->idDelegacion,
+								"idGenero"				=> $rowDelImc->idGenero,
 								"incidenciaBajoPeso"	=> $rowDelImc->incidenciaBajoPeso,
 								"incidenciaNormal"		=> $rowDelImc->incidenciaNormal,
 								"incidenciaSobrepeso"	=> $rowDelImc->incidenciaSobrepeso,
@@ -59,6 +76,8 @@ class Api extends MY_Controller {
 								"incidenciaMorbida"		=> $rowDelImc->incidenciaMorbida
 							);
 						}
+					}else{
+						$response['status'] 	= "ERROR";
 					}
 					
 				break;
@@ -96,34 +115,30 @@ class Api extends MY_Controller {
 							);
 						}
 					}
-					$queryDelegacion= $this->dimensiones_model->getDimension('delegacion');
-					if($queryDelegacion->num_rows()){
-						$response['get-requests']['delegacion'] = array();
-						$response['get-requests']['delegacion']['nombre'] = "Delegacion";
-						$response['get-requests']['delegacion']['parametros'] = array();
-						foreach($queryDelegacion->result() as $rowDel){
-							$response['get-requests']['delegacion']['parametros'][] = array(
-								$rowDel->idDelegacion 	=> $rowDel->delegacion,
-							);
-						}
-					}
-					
 				break;
 			default:
-					$response['edad'] 		= (isset($_GET['edad']))?$_GET['edad']:"";
-					$response['genero'] 	= (isset($_GET['genero']))?$_GET['genero']:"";
-					$response['delegacion'] = (isset($_GET['delegacion']))?$_GET['delegacion']:"";
+					$idEdad		= (isset($_GET['edad']))?$_GET['edad']:"";
+					$idGenero	= (isset($_GET['genero']))?$_GET['genero']:"";
+					$response['status'] 	= "OK";
 					$this->load->model("peso_model");
-					$queryPeso	= $this->peso_model->getDelegacionImc($response['edad'], $response['genero'], $response['delegacion']);
-					if($queryEdad->num_rows()){
-						$response['get-requests']['edad'] = array();
-						$response['get-requests']['edad']['nombre'] = "Edad";
-						$response['get-requests']['edad']['parametros'] = array();
-						foreach($queryEdad->result() as $rowEdad){
-							$response['get-requests']['edad']['parametros'][] = array(
-								$rowEdad->idEdad 	=> $rowEdad->edad,
+					$queryPeso	= $this->peso_model->getPesoimc($idEdad, $idGenero);
+					if($queryPeso->num_rows()){
+						$response['edad'] 		= $idEdad;
+						$response['genero'] 	= $idGenero;
+						$response['rows'] = array();
+						foreach($queryPeso->result() as $rowPesoImc){
+							$response['rows'][] = array(
+								"idEdad"				=> $rowPesoImc->idEdad,
+								"idGenero"				=> $rowPesoImc->idGenero,
+								"incidenciaBajoPeso"	=> $rowPesoImc->incidenciaBajoPeso,
+								"incidenciaNormal"		=> $rowPesoImc->incidenciaNormal,
+								"incidenciaSobrepeso"	=> $rowPesoImc->incidenciaSobrepeso,
+								"incidenciaObesidad"	=> $rowPesoImc->incidenciaObesidad,
+								"incidenciaMorbida"		=> $rowPesoImc->incidenciaMorbida
 							);
 						}
+					}else{
+						$response['status'] 	= "ERROR";
 					}
 					
 				break;
