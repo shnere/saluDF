@@ -18,27 +18,18 @@
 	<link rel="apple-touch-icon" href="<?php echo base_url();?>/apple-touch-icon.png">
 	
 	<!-- CSS: implied media="all" -->
-	<link rel="stylesheet" href="<?php echo base_url().FOLDER_CSS; ?>style.css?v=2">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?php echo base_url().FOLDER_CSS; ?>facebox.css">
+	<link rel="stylesheet" href="<?php echo base_url().FOLDER_CSS; ?>saludf.css">
 
 	<!-- Load Head JS -->
 	<script src="<?php echo base_url().FOLDER_JS; ?>head.min.js"></script>
-	
-	<!-- Load all scripts by Head JS -->
-	<script>
-		head.js("<?php echo base_url().FOLDER_JSLIB; ?>modernizr-1.7.min.js",
-				"https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js",
-				"<?php echo base_url().FOLDER_JSLIB; ?>facebox.js",
-				"<?php echo base_url().FOLDER_JSMYLIB; ?>library.js",
-				"<?php echo base_url().FOLDER_JS; ?>plugins.js"
-				);
-	</script>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="<?php echo base_url().FOLDER_JS; ?>jquery.drawDoughnutChart.js"></script>
+	<script src="<?php echo base_url().FOLDER_JS; ?>saludf.js"></script>
+	<script src="<?php echo base_url().FOLDER_JS; ?>slider.js"></script>
+	<script src="<?php echo base_url().FOLDER_JS; ?>peso.js"></script>
 	
 </head>
 
 <body>
-	<div id="container">
-	    <header>
-
-	    </header>
-	    <div id="main" role="main">

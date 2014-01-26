@@ -12,11 +12,10 @@ class Home extends MY_Controller {
 		// Configuration Information 
 		
 		//$this->output->enable_profiler(PROFILER);
-		$data['SYS_metaTitle'] 			= 'Codeigniter Boilerplate';
+		$data['SYS_metaTitle'] 			= 'saluDF';
 		$data['SYS_metaKeyWords'] 		= '';
-		$data['SYS_metaDescription'] 	= 'Codeigniter Boilerplate';
+		$data['SYS_metaDescription'] 	= 'saluDF';
 		$data['SYS_mainContent'] 		= 'home_v';
-		// Verify if we are in beta version (ask for code)
 		$this->load->view('/includes/template', $data);
 	
 	}
