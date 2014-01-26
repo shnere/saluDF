@@ -53,7 +53,118 @@
 
 		<!-- Mortalidad -->
 		<div id="mortalidad">
-
+			<div class="filtros">
+				&nbsp;
+			</div>
+			
+			<div id="container-mortalidad">
+				<div id="doughnutChartMortalidad" class="chart">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>defunciones.png" class="" alt="Defunciones" module="defunciones">
+				</div>
+			</div>
+			
+			<div class="resultado">
+				<div class="septicemia hidden">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>mortalidad_septicemia.png" class="" alt="">
+					<h3 style="color:#BE1622;">Septicemia</h3>
+					<h4>¿Qué es?</h4>
+					<p>-Una inflamación potencialmente mortal generada por una infección severa, ya sea por causa de un virus, hongo o bacteria</p>
+					<h4>Síntomas</h4>
+					<p>-Fiebre alta, manchas rojas en la piel, presión baja, hiperventilación, alteración del estado mental.</p>
+					<h4>Tratamiento</h4>
+					<p>-Fluidos intravenosos, antibióticos. Puede ser necesario dar apoyo a los pulmones por medio de ventilación mecánica y dialisis.</p>
+				</div>
+				<div class="nefritis hidden">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>mortalidad_nefritis.png" class="" alt="">
+					<h3 style="color:#F18700;">Nefritis tubulointersticial </h3>
+					<h4>¿Qué es?</h4>
+					<p>-Una inflamación de los riñones derivada de infección ó como reacción a diversos medicamentos.</p>
+					<h4>Síntomas</h4>
+					<p>-Los síntomas son fiebre, erupciónes e inflamación de los riñones.</p>
+					<h4>Tratamiento</h4>
+					<p>-Se recomienda retirar el medicamento causante de la inflamación y dar terapia nutricional para una correcta asimilación de fluidos en el paciente.</p>
+				</div>
+				<div class="acidosis hidden">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>mortalidad_acidosis.png" class="" alt="">
+					<h3 style="color:#FFDE00;">Nefritis tubulointersticial </h3>
+					<h4>¿Qué es?</h4>
+					<p>-Una baja en el pH del plasma sanguíneo.</p>
+					<h4>Síntomas</h4>
+					<p>-Dolor de pecho, palpitaciones, alteración del apetito, perdida de peso, debilidad muscular, entre otros.</p>
+					<h4>Tratamiento</h4>
+					<p>-Para tratar esta enfermedad, es necesario identificar la enfermedad desencadenante de la misma.</p>
+				</div>
+				<div class="isquemica hidden">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>mortalidad_EnfermedadIsquemica.png" class="" alt="">
+					<h3 style="color:#96C123;">Enfermedad isquémica</h3>
+					<h4>¿Qué es?</h4>
+					<p>-Un desequilibrio entre el suministro de oxígeno y la demanda cardiaca. Es causada por una escacez en el flujo de sangre al corazón.</p>
+					<h4>Síntomas</h4>
+					<p>-Generalmente se presenta en pacientes que ya han sobrevivido con anterioridad a diversos infartos.</p>
+					<h4>Tratamiento</h4>
+					<p>-La mitad de los pacientes que padecen esta enfermedad deben de recibir un transplante cardiaco.</p>
+				</div>
+				<div class="cerebrovascular hidden">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>mortalidad_cerebrovascular.png" class="" alt="">
+					<h3 style="color:#951E81;">Enfermedad cerebrovascular</h3>
+					<h4>¿Qué es?</h4>
+					<p>-Es una disminución en el flujo de sangre al cerebro con futuras afectaciones a la función del cerebro.</p>
+					<h4>Síntomas</h4>
+					<p>-Puede ser causada por un golpe ó ser crónica y presentarse con cambios en la audición, perdida de memoria, alteración en el nivel de conciencia y funciones motoras.</p>
+					<h4>Tratamiento</h4>
+					<p>-El tratamiento debe darse en las primeras 6 horas en que se presentan los síntomas y ser individualizado de acuerdo a cada paciente.</p>
+				</div>
+				<div class="neumonia hidden">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>mortalidad_neumonia.png" class="" alt="">
+					<h3 style="color:#1D71B8;">Neumonía</h3>
+					<h4>¿Qué es?</h4>
+					<p>-Es una inflamación en los espacios alveolares del pulmón que provoca enrojecimiento, hinchazón y dolor en los pulmones.</p>
+					<h4>Síntomas</h4>
+					<p>-Gripa o catarro común, fiebre prolongada por más de tres días, hundimiento en las costillas y dolor en el pecho.</p>
+					<h4>Tratamiento</h4>
+					<p>-Si se detecta a tiempo, el tratamiento con antibióticos orales, reposo, consumo de líquidos y cuidados en el hogar son suficientes para combatir la enfermedad.</p>
+				</div>
+				<div class="choque-hipovolemico hidden">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>mortalidad_choqueHipovolemico.png" class="" alt="">
+					<h3 style="color:#E71D73;">Choque hipovolémico</h3>
+					<h4>¿Qué es?</h4>
+					<p>-Se da cuando el flujo de la sangre baja tanto, que no es suficiente para que las células desarrollen sus funciones provocando que muchos órganos dejen de funcionar. Es generalmente inducida por una hemorragia.</p>
+					<h4>Síntomas</h4>
+					<p>-Ansiedad, presión arterial baja, pulso débil, sed, hipotermia.</p>
+					<h4>Tratamiento</h4>
+					<p>-Se debe administrar sangre y restituir la posible pérdida de fluidos de manera intravenosa.</p>
+				</div>
+				<div class="insuficiencia-renal hidden">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>mortalidad_insuficienciaRenal.png" class="" alt="">
+					<h3 style="color:#00A19A;">Insuficiencia renal terminal</h3>
+					<h4>¿Qué es?</h4>
+					<p>-Ocurre cuando los riñones no son capaces de filtrar las toxinas y otras sustancias de desecho de la sangre correctamente, por lo que, como su nombre lo indica; se pierde la función renal. </p>
+					<h4>Síntomas</h4>
+					<p>- Se puede presentar frecuentemente como consecuencia de la diabetes, hipertensión, obstrucción de las vías urinarias, enfermedades inflamatorias de los riñones y uso de medicamentos tóxicos para el riñón. Hay menor producción de orina, desequilibrios del agua y los fluidos corporales y se relaciona con la anemia alta toxicidad en la sangre.  </p>
+					<h4>Tratamiento</h4>
+					<p>-Diálisis de por vida, hemodiálisis o trasplante de riñón.</p>
+				</div>
+				<div class="peritonitis hidden">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>mortalidad_peritonitis.png" class="" alt="">
+					<h3 style="color:#662483;">Peritonitis</h3>
+					<h4>¿Qué es?</h4>
+					<p>-Es una inflamación del peritoneo, la membrana que recubre la cavidad abdominal y las vísceras. Comúnmente resulta del rompimiento de un órgano hueco, como el apéndice.</p>
+					<h4>Síntomas</h4>
+					<p>- Se presenta dolor abdominal, náuseas, vómitos, fiebre, hipotensión, taquicardias y deshidratación. Puede provocar fallo orgánico múltiple o multisistémico, que lleva a la muerte en la mayoría de los casos.</p>
+					<h4>Tratamiento</h4>
+					<p>-Diálisis peritoneal, es un proceso riesgoso.</p>
+				</div>
+				<div class="sepsis-bacteriana hidden">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>mortalidad_sepsisBacteriana.png" class="" alt="">
+					<h3 style="color:#3AAA35;">Sepsis bacteriana del recién nacido</h3>
+					<h4>¿Qué es?</h4>
+					<p>-Infección bacteriana en un neonato, de menos de 90 días de nacido. Representa del 30% al 50% de las muertes de recién nacidos en el mundo.</p>
+					<h4>Síntomas</h4>
+					<p>--Se categoriza en temprana o de inicio tardío. Se refiere a la presencia de una infección bacteriana grave, como la meningitis, neumonía, pielonefritis, o gastroenteritis.</p>
+					<h4>Tratamiento</h4>
+					<p>-Se realizan análisis de orina y estudios de líquido cefalorraquídeo para determinar el tratamiento del bebé.</p>
+				</div>
+			</div>
 		</div>
 
 		<!-- Peso -->

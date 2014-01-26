@@ -13,7 +13,7 @@ $(document).ready(function(){
 				peso = msg['rows'][0];
 				var imagen = $('#doughnutChart img');
 				$("#doughnutChart").empty();
-				$("#doughnutChart").drawDoughnutChart([
+				$("#doughnutChart").drawDoughnutChartPeso([
 					{ title: "Bajo Peso", value : parseInt(peso.incidenciaBajoPeso), key:"bajo-peso", color: "#92278F" },
 					{ title: "Normal", value:  parseInt(peso.incidenciaNormal), key:"normal", color: "#8DC63F" },
 					{ title: "Sobrepeso", value:  parseInt(peso.incidenciaSobrepeso), key:"sobrepeso", color: "#FFDE17" },

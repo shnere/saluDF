@@ -366,17 +366,27 @@ main {
 	float: left;
 }
 
-#peso .resultado img {
+#peso .resultado img, #mortalidad .resultado img {
 	margin-left: -40px;
 }
 
-#peso .resultado h3 {
+#peso .resultado h3, #mortalidad .resultado h3 {
 	margin-left: 60px;
 	margin-top: -30px;
 }
 
-#peso .resultado h3 {
+#peso .resultado h3, #mortalidad .resultado h3 {
 	font-weight: bold;
+}
+
+#mortalidad .resultado h4 {
+	margin-top: 5px;
+}
+
+/* Mortalidad */
+#container-mortalidad {
+	float: left;
+/*	margin: 0 auto;*/
 }
 	
 /* Slider */
