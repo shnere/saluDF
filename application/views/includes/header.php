@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   	
 	<title><?= $SYS_metaTitle; ?></title>
-	<meta name="author" 		content="worktrait.com">
+	<meta name="author" 		content="@shnere @0w3w">
 	<meta name="keywords" 		content="<?= $SYS_metaKeyWords; ?>">
 	<meta name="description" 	content="<?= $SYS_metaDescription; ?>">
   	
@@ -39,6 +39,6 @@
 <body>
 	<div id="container">
 	    <header>
-			<a href="<?php echo base_url(); ?>home" title="home"><h1>Codeigniter Html5 Boilerplate</h1></a>
+			<a href="<?php echo base_url(); ?>home" title="home"><h1>saluDF</h1></a>
 	    </header>
 	    <div id="main" role="main">
