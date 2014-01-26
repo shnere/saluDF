@@ -152,6 +152,9 @@
 				<button id="filtro_enfermedades" class="filtro aqua">Filtrar</button>
 			</div>
 			<div id="container-enfermedades">
+				<div id="iconosEnfermedades">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>enfermedades.png">
+				</div>
 				<div id="graphEnfermedades"></div>
 			</div>
 		</div>

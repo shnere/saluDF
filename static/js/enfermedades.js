@@ -35,17 +35,20 @@ var enfermedadesBarChart = new $jit.BarChart({
   //labels offset position  
   labelOffset: 5,  
   //bars style  
-  type: 'stacked',  
+  type: 'stacked:gradient',  
   //whether to show the aggregation of the values  
   showAggregates:true,  
   //whether to show the labels for the bars  
   showLabels:true,  
   //labels style  
-  Label: {  
-    type: 'HTML', //Native or HTML  
-    size: 11,  
+  Label: {
+	overridable: true,
+    type: 'HTML', //Native or HTML
+	style: 'padding:5px',  
+    size: 10,
     family: 'Arial',  
-    color: 'white'  
+    color: 'white',
+	textAlign: 'center',
   },  
   //add tooltips  
   Tips: {  
@@ -79,10 +82,10 @@ loadEnfermedades = function(){
 				enfermedadesBarChart.loadJSON(newDataJson);
 				AlreadyLoadEnfermedades = true;
 			}else{
-				enfermedadesBarChart.loadJSON(newDataJson);
+				//enfermedadesBarChart.loadJSON(newDataJson);
 				AlreadyLoadEnfermedades = false;
 				// No funciona
-				//enfermedadesBarChart.updateJSON(newDataJson);
+				enfermedadesBarChart.updateJSON(newDataJson);
 			}
 			console.log(newDataJson);
 		}else{
