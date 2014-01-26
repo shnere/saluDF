@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	
 	var edad = 50,
 		peso = {},
 		genero = 0,
