@@ -16,6 +16,8 @@ class Api extends MY_Controller {
 			'api/delegacionimc/parametros'	=> 'Valor de los parámetros de búsqueda via get',
 			'api/pesoimc/'					=> 'Incidencias acorde al de IMC contra edad y genero',
 			'api/pesoimc/parametros'		=> 'Valor de los parámetros de búsqueda via get',
+			'api/mortalidad/'				=> 'Incidencias de mortalidad de enfermedades contra edad y IMC',
+			'api/mortalidad/parametros'		=> 'Valor de los parámetros de búsqueda via get',
 			'api/datoscuriosos/'				=> 'Descripción de URLs',
 			'api/datoscuriosos/muertespromedio'	=> 'Muertes diarias promedio en Hospitales públicos',
 			'api/datoscuriosos/delegacionincidencia'	=> 'DelegacionesConMasIncidencias',
@@ -218,6 +220,64 @@ class Api extends MY_Controller {
 			->set_content_type('application/json')
 			->set_output(json_encode($response));
 	} 
+	
+	function mortalidad($request = NULL){
+		$response = array();
+		switch($request){
+			case 'parametros':
+					$response['get-requests'] = array();
+					$queryEdad		= $this->dimensiones_model->getDimension('edad');
+					if($queryEdad->num_rows()){
+						$response['get-requests']['edad'] = array();
+						$response['get-requests']['edad']['nombre'] = "Edad";
+						$response['get-requests']['edad']['parametros'] = array();
+						foreach($queryEdad->result() as $rowEdad){
+							$response['get-requests']['edad']['parametros'][] = array(
+								$rowEdad->idEdad 	=> $rowEdad->edad,
+							);
+						}
+					}
+					$queryImc	= $this->dimensiones_model->getDimension('imc');
+					if($queryImc->num_rows()){
+						$response['get-requests']['imc'] = array();
+						$response['get-requests']['imc']['nombre'] = "IMC";
+						$response['get-requests']['imc']['parametros'] = array();
+						foreach($queryImc->result() as $rowImc){
+							$response['get-requests']['imc']['parametros'][] = array(
+								$rowImc->idImc 	=> $rowImc->rango,
+							);
+						}
+					}
+				break;
+			default:
+					$idEdad		= (isset($_GET['edad']))?$_GET['edad']:"";
+					$idImc		= (isset($_GET['imc']))?$_GET['imc']:"";
+					$response['status'] 	= "OK";
+					$this->load->model("mortalidad_model");
+					$query	= $this->mortalidad_model->getMortalidad($idEdad, $idImc);
+					if($query->num_rows()){
+						$response['edad'] 	= $idEdad;
+						$response['imc'] 	= $idImc;
+						$response['rows'] = array();
+						foreach($query->result() as $row){
+							$response['rows'][$row->idAfeccion] = array(
+								"idEdad"				=> $row->idEdad,
+								"idImc"					=> $row->idImc,
+								"descripcion"			=> $row->descripcion,
+								"incidencias"			=> $row->insidencias
+							);
+						}
+					}else{
+						$response['status'] 	= "ERROR";
+					}
+					
+				break;
+		}
+		// Imprimo resultado
+		$this->output
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
 	
 }
 /* End of file home.php */ 
