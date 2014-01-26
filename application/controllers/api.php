@@ -263,6 +263,7 @@ class Api extends MY_Controller {
 							$response['rows'][$row->idAfeccion] = array(
 								"idEdad"				=> $row->idEdad,
 								"idImc"					=> $row->idImc,
+								"descripcion"			=> $row->descripcion,
 								"incidencias"			=> $row->insidencias
 							);
 						}

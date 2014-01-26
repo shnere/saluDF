@@ -9,11 +9,12 @@ class Mortalidad_model extends CI_Model {
 	
 	function getMortalidad($edad="",$imc=""){
 		if(empty($edad) && empty($imc)){
-			return $this->db->select("idAfeccion")
+			return $this->db->select("mortalidad.idAfeccion, afeccion.descripcion")
 						->select("'' AS idImc", FALSE)
 						->select("'' AS idEdad", FALSE)
 						->select_sum("insidencias")
 						->from('mortalidad')
+						->join('afeccion', 'mortalidad.idAfeccion = afeccion.idAfeccion','inner')
 						->group_by("idAfeccion")
 						->order_by("insidencias", "DESC")
 						->limit(10)
