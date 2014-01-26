@@ -13,6 +13,9 @@ $(document).ready(function(){
 				$('img[module="' + sections[i] + '"]').removeClass('active');
 			}
 		}
+		if(section == "enfermedades"){
+			loadEnfermedades();
+		}
 	};
 	
 	showSection(sections[0]);

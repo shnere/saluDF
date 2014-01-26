@@ -20,9 +20,8 @@
 	<!-- CSS: implied media="all" -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?php echo base_url().FOLDER_CSS; ?>facebox.css">
+	<link rel="stylesheet" href="<?php echo base_url().FOLDER_CSS; ?>jit-BarChart.css">
 	<link rel="stylesheet" href="<?php echo base_url().FOLDER_CSS; ?>saludf.css">
-
-	<!-- Load Head JS -->
 	
 </head>
 

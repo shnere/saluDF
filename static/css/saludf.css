@@ -449,6 +449,22 @@ output {
   font-size: 55px;
 }
 
+/* ENFERMEDADES */
+
+#container-enfermedades{
+	width: 65%;
+	margin-right: 3%;
+	float: left;
+}
+
+#graphEnfermedades {
+position: relative;
+width: 600px;
+height: 400px;
+margin: auto;
+overflow: hidden;
+}
+
 /* FUN FACTS */
 #funfacts{
 	overflow:hidden;

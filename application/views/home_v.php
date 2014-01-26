@@ -57,7 +57,9 @@
 		</div>
 
 		<!-- Mortalidad -->
-		<div id="mortalidad">Mort</div>
+		<div id="mortalidad">
+
+		</div>
 
 		<!-- Peso -->
 		<div id="peso">
@@ -134,7 +136,25 @@
 		</div>
 		
 		<!-- Enfermedades -->
-		<div id="enfermedades">Enfermedades</div>
+		<div id="enfermedades">
+			<div class="filtros">
+				<h2>Edad</h2>
+				<input type="range" id="edad_enfermedades" name="edad_enfermedades" min="1" max="99" step="1">
+				<output for="edad"></output>
+				
+				<h2>Género</h2>
+				<div class="generos">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>boton_mujer.png" class="boton femenino"  data-query="2" alt="Femenino">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>boton_hombre.png" class="boton masculino"  data-query="3" alt="Masculino">
+					<img src="<?php echo base_url().FOLDER_IMG; ?>boton_ambosgeneros.png" class="boton active ambos"  data-query="0" alt="Ambos Géneros">
+				</div>
+				
+				<button id="filtro_enfermedades" class="filtro aqua">Filtrar</button>
+			</div>
+			<div id="container-enfermedades">
+				<div id="graphEnfermedades"></div>
+			</div>
+		</div>
 		
 		<!-- Datos Curiosos -->
 		<div id="funfacts">

@@ -18,6 +18,8 @@ class Api extends MY_Controller {
 			'api/pesoimc/parametros'		=> 'Valor de los parámetros de búsqueda via get',
 			'api/mortalidad/'				=> 'Incidencias de mortalidad de enfermedades contra edad y IMC',
 			'api/mortalidad/parametros'		=> 'Valor de los parámetros de búsqueda via get',
+			'api/afecciones/'				=> 'Incidencias de afecciones contra edad y genero',
+			'api/afecciones/parametros'		=> 'Valor de los parámetros de búsqueda via get',
 			'api/datoscuriosos/'				=> 'Descripción de URLs',
 			'api/datoscuriosos/muertespromedio'	=> 'Muertes diarias promedio en Hospitales públicos',
 			'api/datoscuriosos/delegacionincidencia'	=> 'DelegacionesConMasIncidencias',
@@ -264,6 +266,66 @@ class Api extends MY_Controller {
 								"idEdad"				=> $row->idEdad,
 								"idImc"					=> $row->idImc,
 								"descripcion"			=> $row->descripcion,
+								"incidencias"			=> $row->insidencias
+							);
+						}
+					}else{
+						$response['status'] 	= "ERROR";
+					}
+					
+				break;
+		}
+		// Imprimo resultado
+		$this->output
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+	
+	function afecciones($request = NULL){
+		$response = array();
+		switch($request){
+			case 'parametros':
+					$response['get-requests'] = array();
+					$queryEdad		= $this->dimensiones_model->getDimension('edad');
+					if($queryEdad->num_rows()){
+						$response['get-requests']['edad'] = array();
+						$response['get-requests']['edad']['nombre'] = "Edad";
+						$response['get-requests']['edad']['parametros'] = array();
+						foreach($queryEdad->result() as $rowEdad){
+							$response['get-requests']['edad']['parametros'][] = array(
+								$rowEdad->idEdad 	=> $rowEdad->edad,
+							);
+						}
+					}
+					$queryGenero	= $this->dimensiones_model->getDimension('genero');
+					if($queryGenero->num_rows()){
+						$response['get-requests']['genero'] = array();
+						$response['get-requests']['genero']['nombre'] = "Genero";
+						$response['get-requests']['genero']['parametros'] = array();
+						foreach($queryGenero->result() as $rowGenero){
+							$response['get-requests']['genero']['parametros'][] = array(
+								$rowGenero->idGenero 	=> $rowGenero->genero,
+							);
+						}
+					}
+				break;
+			default:
+					$idEdad		= (isset($_GET['edad']))?$_GET['edad']:"";
+					$idGenero	= (isset($_GET['genero']))?$_GET['genero']:"";
+					$response['status'] 	= "OK";
+					$this->load->model("afecciones_model");
+					$query	= $this->afecciones_model->getAfecciones($idEdad, $idGenero);
+					if($query->num_rows()){
+						$response['edad'] 		= $idEdad;
+						$response['genero'] 	= $idGenero;
+						$response['rows'] = array();
+						$re = '/(.*),.*/i';
+						$su = '${1}';
+						foreach($query->result() as $row){
+							$response['rows'][] = array(
+								"idEdad"				=> $row->idEdad,
+								"idGenero"				=> $row->idGenero,
+								"afeccion"				=> preg_replace($re, $su, $row->descripcion),
 								"incidencias"			=> $row->insidencias
 							);
 						}
