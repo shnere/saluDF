@@ -66,8 +66,8 @@ loadEnfermedades = function(){
 		genero: genero_enfermedad,
 		edad: edad_enfermedad})
 	.done(function( data ) {
-		console.log("Afecciones:");
-		console.log(data);
+		//console.log("Afecciones:");
+		//console.log(data);
 		if(data.status ="OK"){
 			var newDataJson = {};
 			newDataJson['label'] 	= ['Afecciones'];
@@ -87,7 +87,7 @@ loadEnfermedades = function(){
 				// No funciona
 				enfermedadesBarChart.updateJSON(newDataJson);
 			}
-			console.log(newDataJson);
+			//console.log(newDataJson);
 		}else{
 			window.alert("No existe información con estos parámetros de búsqueda");
 		}

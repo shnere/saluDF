@@ -163,7 +163,7 @@ main {
 /* Iconos */
 
 #iconos {
-	margin-top: -40px;
+	margin-top: -20px;
 }
 
 #iconos.header {
@@ -198,6 +198,10 @@ main {
 	/*background: #7ac8c8;*/
 }
 
+.logofull{
+	margin: 30px 3%;
+	text-align: center;	
+}
 
 /* Delegaciones */
 #delegaciones .resultado h2 {
@@ -494,7 +498,7 @@ overflow: hidden;
 
 /* FUN FACTS */
 #funfacts{
-	overflow:hidden;
+
 }
 .fun-container{
 	float:left;

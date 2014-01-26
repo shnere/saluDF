@@ -15,8 +15,10 @@
 	<div class="clearfix"></div>
 	<div id="content">
 		<div id="delegaciones">
+			<div class="logofull">
+				<img src="<?php echo base_url().FOLDER_IMG; ?>logo_delegaciones_full.png" alt="Delegaciones">
+			</div>
 			<div class="filtros">
-				
 				<h2>Género</h2>
 				<div class="generos">
 					<img src="<?php echo base_url().FOLDER_IMG; ?>boton_mujer.png" class="boton femenino" data-query="2" alt="Femenino">
@@ -53,6 +55,10 @@
 
 		<!-- Mortalidad -->
 		<div id="mortalidad">
+			<div class="logofull">
+				<img src="<?php echo base_url().FOLDER_IMG; ?>logo_mortalidad_full.png" alt="Delegaciones">
+			</div>
+			
 			<div class="filtros">
 				&nbsp;
 			</div>
@@ -169,6 +175,9 @@
 
 		<!-- Peso -->
 		<div id="peso">
+			<div class="logofull">
+				<img src="<?php echo base_url().FOLDER_IMG; ?>logo_peso_full.png" alt="Delegaciones">
+			</div>
 			<div class="filtros">
 				<h2>Edad</h2>
 				<input type="range" id="edad_peso" name="edad_peso" min="1" max="99" step="1">
@@ -243,6 +252,9 @@
 		
 		<!-- Enfermedades -->
 		<div id="enfermedades">
+			<div class="logofull">
+				<img src="<?php echo base_url().FOLDER_IMG; ?>logo_enfermedades_full.png" alt="Delegaciones">
+			</div>
 			<div class="filtros">
 				<h2>Edad</h2>
 				<input type="range" id="edad_enfermedades" name="edad_enfermedades" min="1" max="99" step="1">
@@ -267,7 +279,10 @@
 		
 		<!-- Datos Curiosos -->
 		<div id="funfacts">
-			<div class="fun-container left top">
+			<div class="logofull">
+				<img src="<?php echo base_url().FOLDER_IMG; ?>logo_funfacts_full.png" alt="Delegaciones">
+			</div>
+			<div class="fun-container left">
 				<span class="font-fun-fact">Afecciones con <strong>mayor</strong> estancia dentro de un centro de salud.</span>
 				<br><br>
 				<img class="left" src="<?php echo base_url().FOLDER_IMG; ?>fun-facts-dias-en-cama.png" alt="Promedio días en cama por enfermedad">

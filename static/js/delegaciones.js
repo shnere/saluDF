@@ -22,39 +22,31 @@ $(document).ready(function(){
 			})
 			.done(function( msg ) {
 				data = msg['rows'];
-				// Recorro delegaciones
-				for(var index in data){
-					var max = 0, incidencia = '', newindex;
-					// Checo su incidencia mayor
-					for(var jdex in data[index]){
-						if($.inArray(jdex, incidencias) !== -1){
-							if(parseInt(data[index][jdex]) > max){
-								console.log(max,data[index][jdex]);
-								max = parseInt(data[index][jdex]);
-								incidencia = jdex;
-							}
+				$('.puntito').removeClass('bg-bajo-peso bg-normal bg-sobrepeso bg-obesidad bg-obesidad-morbida');
+				data.forEach(function(delegacion,index){
+					var incidenciaMayor = "incidenciaBajoPeso";
+					for(i = 0; i < 4; i++){
+						if(parseInt(delegacion[incidenciaMayor]) <= parseInt(delegacion[incidencias[i]])){
+							incidenciaMayor = incidencias[i];
 						}
 					}
-					newIndex = parseInt(index) + parseInt(1);
-					console.log("max:",parseInt(index), newIndex, incidencia, max);
 					// Pintar incidencia en el punto
-					if(incidencia === "incidenciaBajoPeso"){
-						$('.puntito[alt="' + newIndex + '"]').addClass('bg-bajo-peso');
-					}else if(incidencia === "incidenciaNormal"){
-						$('.puntito[alt="' + newIndex + '"]').addClass('bg-normal');
-					}else if(incidencia === "incidenciaSobrepeso"){
-						$('.puntito[alt="' + newIndex + '"]').addClass('bg-sobrepeso');
-					}else if(incidencia === "incidenciaObesidad"){
-						$('.puntito[alt="' + newIndex + '"]').addClass('bg-obesidad');
-					}else if(incidencia === "incidenciaMorbida"){
-						$('.puntito[alt="' + newIndex + '"]').addClass('bg-obesidad-morbida');
+					if(incidenciaMayor === "incidenciaBajoPeso"){
+						$('.puntito[alt="' + delegacion.idDelegacion + '"]').addClass('bg-bajo-peso');
+					}else if(incidenciaMayor === "incidenciaNormal"){
+						$('.puntito[alt="' + delegacion.idDelegacion + '"]').addClass('bg-normal');
+					}else if(incidenciaMayor === "incidenciaSobrepeso"){
+						$('.puntito[alt="' + delegacion.idDelegacion + '"]').addClass('bg-sobrepeso');
+					}else if(incidenciaMayor === "incidenciaObesidad"){
+						$('.puntito[alt="' + delegacion.idDelegacion + '"]').addClass('bg-obesidad');
+					}else if(incidenciaMayor === "incidenciaMorbida"){
+						$('.puntito[alt="' + delegacion.idDelegacion + '"]').addClass('bg-obesidad-morbida');
 					}
-				}
+				});
 			});
 		},
 		actualizaInfo = function(datos, id){
 			var html = '';
-			
 			$('#delegaciones .resultado').empty();
 			if(!!datos === false){
 				// no encontrados
@@ -86,10 +78,7 @@ $(document).ready(function(){
 		parametros = msg['extras']['delegacion']['parametros'];
 	});
 	
-	
 
-	
-	
 	// Actualizar filtros
 	$('#filtro_delegaciones').click(function(){
 		genero = $('#delegaciones .generos img.active').attr('data-query');
@@ -107,16 +96,18 @@ $(document).ready(function(){
 	
 	// Puntito Click
 	$('.puntito').click(function(){
+		var flag = false;
 		var id = $(this).attr('alt')
-		
-		
 		data.forEach(function(row,index){
-			if(row.idDelegacion === id){
-				actualizaInfo(data[index], id);
-				return;
+			if(row.idDelegacion == id){
+				actualizaInfo(row, id);
+				flag = true;
 			}
 		});
-		actualizaInfo(false, id);
+		if(!flag){
+			actualizaInfo(false, id);
+		}
+
 	});
 	
 });
