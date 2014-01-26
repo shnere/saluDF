@@ -148,7 +148,7 @@
 					<h4>¿Qué es?</h4>
 					<p>-Ocurre cuando los riñones no son capaces de filtrar las toxinas y otras sustancias de desecho de la sangre correctamente, por lo que, como su nombre lo indica; se pierde la función renal. </p>
 					<h4>Síntomas</h4>
-					<p>- Se puede presentar frecuentemente como consecuencia de la diabetes, hipertensión, obstrucción de las vías urinarias, enfermedades inflamatorias de los riñones y uso de medicamentos tóxicos para el riñón. Hay menor producción de orina, desequilibrios del agua y los fluidos corporales y se relaciona con la anemia alta toxicidad en la sangre.  </p>
+					<p>- Se puede presentar frecuentemente como consecuencia de la diabetes, hipertensión, obstrucción de las vías urinarias, enfermedades inflamatorias de los riñones y uso de medicamentos tóxicos para el riñón.</p>
 					<h4>Tratamiento</h4>
 					<p>-Diálisis de por vida, hemodiálisis o trasplante de riñón.</p>
 				</div>
