@@ -39,6 +39,6 @@
 <body>
 	<div id="container">
 	    <header>
-			<a href="<?php echo base_url(); ?>home" title="home"><h1>Codeigniter Html5 Boilerplate</h1></a>
+			
 	    </header>
 	    <div id="main" role="main">
