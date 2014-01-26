@@ -14,7 +14,12 @@ class Api extends MY_Controller {
 			'api/delegacionimc/' 			=> 'Incidencias de IMC por delegación contra genero',
 			'api/delegacionimc/parametros'	=> 'Valor de los parámetros de búsqueda via get',
 			'api/pesoimc/'					=> 'Incidencias acorde al de IMC contra edad y genero',
-			'api/pesoimc/parametros'		=> 'Valor de los parámetros de búsqueda via get'
+			'api/pesoimc/parametros'		=> 'Valor de los parámetros de búsqueda via get',
+			'api/datoscuriosos/'				=> 'Descripción de URLs',
+			'api/datoscuriosos/muertespromedio'	=> 'Muertes diarias promedio en Hospitales públicos',
+			'api/datoscuriosos/delegacionincidencia'	=> 'DelegacionesConMasIncidencias',
+			'api/datoscuriosos/afeccionesdias'	=> 'Promedio de días de un paciente por enfermedad',
+			'api/datoscuriosos/trantornobipolar'=> 'Porcentaje por Genero que se presentan por Trastorno afectivo bipolar',
 		);
 		$this->output
 			->set_content_type('application/json')
@@ -141,6 +146,70 @@ class Api extends MY_Controller {
 						$response['status'] 	= "ERROR";
 					}
 					
+				break;
+		}
+		// Imprimo resultado
+		$this->output
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+	
+	function datoscuriosos($request = NULL){
+		$response = array();
+		$this->load->model("datoscuriosos_model");
+		switch($request){
+			case 'muertespromedio':
+					$queryMuertesPromedio	= $this->datoscuriosos_model->getMuertesPromedio();
+					if($queryMuertesPromedio->num_rows()){
+						foreach($queryMuertesPromedio->result() as $rowMPromedio){
+							$response['muertes-promedio'] = $rowMPromedio->mPromedio;
+						}
+					}else{
+						$response['muertes-promedio'] = "0";
+					}
+				break;
+			case 'delegacionincidencia':
+					$response['delegaciones'] = array();
+					$queryDelegaciones	= $this->datoscuriosos_model->getDelegacionesIncidencias();
+					if($queryDelegaciones->num_rows()){
+						foreach($queryDelegaciones->result() as $rowDelInc){
+							$response['delegaciones'][] = array(
+								$rowDelInc->delegacion => $rowDelInc->incidenciasTotales
+							);
+						}
+					}
+				break;
+			case 'afeccionesdias':
+					$response['afecciones'] = array();
+					$query	= $this->datoscuriosos_model->getAfeccionesDias();
+					if($query->num_rows()){
+						foreach($query->result() as $row){
+							$response['afecciones'][] = array(
+									"idAfeccion" => $row->idAfeccion,
+									"descripcion" => $row->descripcion,
+									"promedioDiasEnfermedad" => $row->promedioDiasEnfermedad,
+									"numeroDeIncidencias" => $row->numeroDeIncidencias
+							);
+						}
+					}
+				break;
+			case 'trantornobipolar':
+					$query	= $this->datoscuriosos_model->getTrantornoBipolar();
+					if($query->num_rows()){
+						foreach($query->result() as $row){
+							$response['generoBipolar'] = $row->sexo;
+						}
+					}else{
+						$response['generoBipolar'] = "Sin Datos";
+					}
+				break;
+			default:
+				$response['get-requests'] = array(
+					'api/datoscuriosos/'				=> 'Descripción de URLs',
+					'api/datoscuriosos/muertespromedio'	=> 'Muertes diarias promedio en Hospitales públicos',
+					'api/datoscuriosos/delegacionincidencia'	=> 'DelegacionesConMasIncidencias',
+					'api/datoscuriosos/afeccionesdias'	=> 'Promedio de días de un paciente por enfermedad',
+					'api/datoscuriosos/trantornobipolar'=> 'Porcentaje por Genero que se presentan por Trastorno afectivo bipolar');
 				break;
 		}
 		// Imprimo resultado
