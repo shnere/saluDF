@@ -12,9 +12,9 @@ class Home extends MY_Controller {
 		// Configuration Information 
 		
 		//$this->output->enable_profiler(PROFILER);
-		$data['SYS_metaTitle'] 			= 'saluDF';
+		$data['SYS_metaTitle'] 			= 'saludCDMX';
 		$data['SYS_metaKeyWords'] 		= '';
-		$data['SYS_metaDescription'] 	= 'saluDF';
+		$data['SYS_metaDescription'] 	= 'saludCDMX';
 		$data['SYS_mainContent'] 		= 'home_v';
 		$this->load->view('/includes/template', $data);
 	

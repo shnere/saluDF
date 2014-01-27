@@ -3,7 +3,7 @@
 		<img src="<?php echo base_url().FOLDER_IMG; ?>corazondf.png" alt="" />
 	</main>
 	<div id="header-wrap">
-		<a href="#" title="saluDF"></a>
+		<a href="#" title="saluCDMX"></a>
 	</div>
 	<div id="iconos">
 		<div class="icono"> <a href="javascript:void(0)" title="Delegaciones"> <img src="<?php echo base_url().FOLDER_IMG; ?>logo_delegaciones.png" alt="Delegaciones" class="boton active" module="delegaciones"> </a> </div>
@@ -28,7 +28,7 @@
 				
 				<button id="filtro_delegaciones" class="filtro aqua">Filtrar</button>
 				<br>
-				<img style="margin-top:200px;" src="<?php echo base_url().FOLDER_IMG; ?>mapa_informacion.png" alt="Delegaciones">
+				<img class="info-tip" src="<?php echo base_url().FOLDER_IMG; ?>mapa_informacion.png" alt="Delegaciones">
 			</div>
 			
 			<div id="container-mapa">

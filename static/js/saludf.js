@@ -21,15 +21,17 @@ $(document).ready(function(){
 	showSection(sections[0]);
 
 	$(window).scroll(function(){
-	if( $(window).scrollTop() > stickyHeaderTop ) {
-		$('#header-wrap').addClass('fixed');
-		$('#iconos').addClass('header');
-		$('main').addClass('fix');
-	} else {
-		$('#header-wrap').removeClass('fixed');
-		$('#iconos').removeClass('header');
-		$('main').removeClass('fix');
-	}
+		if($( window ).width() > 1278){
+			if( $(window).scrollTop() > stickyHeaderTop ) {
+				$('#header-wrap').addClass('fixed');
+				$('#iconos').addClass('header');
+				$('main').addClass('fix');
+			} else {
+				$('#header-wrap').removeClass('fixed');
+				$('#iconos').removeClass('header');
+				$('main').removeClass('fix');
+			}
+		}
 	});
 	
 	
